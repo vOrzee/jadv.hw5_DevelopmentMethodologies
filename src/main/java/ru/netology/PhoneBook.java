@@ -1,5 +1,6 @@
 package ru.netology;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +28,8 @@ public class PhoneBook {
     }
 
     public List<String> printAllNames() {
-        return null;
+        ArrayList<String> sortedNames = new ArrayList<>(contactsMap.keySet()); // TreeMap автоматически сортирует ключи в алфавитном порядке при вставке.
+        sortedNames.forEach(System.out::println);
+        return sortedNames;
     }
 }
