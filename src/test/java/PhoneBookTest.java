@@ -21,9 +21,9 @@ public class PhoneBookTest {
             "Андрей, 89033004569"
     })
     public void addTest(String name, String number) {
-        int expected = 1;
+        int expected = 2;
         int actual = phoneBook.add(name, number);
-        Assertions.assertEquals(1, actual, "После добавления в пустую книгу размер должен быть равен одному");
+        Assertions.assertEquals(expected, actual, "После добавления в пустую книгу с одной записью размер должен быть равен двум");
     }
 
 }
