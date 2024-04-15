@@ -26,4 +26,14 @@ public class PhoneBookTest {
         Assertions.assertEquals(expected, actual, "После добавления в пустую книгу с одной записью размер должен быть равен двум");
     }
 
+    @ParameterizedTest
+    @CsvSource({
+            "89261234567, Елена",
+            "89033004567, Иван",
+            "89033004568, Мария"
+    })
+    public void findByNumberTest(String number, String expectedName) {
+        phoneBook.add(expectedName, number);
+        Assertions.assertEquals(expectedName, phoneBook.findByNumber(number), "Должно вернуть правильное имя по номеру");
+    }
 }

@@ -11,4 +11,8 @@ public class PhoneBook {
         }
         return contactsMap.size();
     }
+
+    public String findByNumber(String phoneNumber) {
+        return null;
+    }
 }
