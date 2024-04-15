@@ -48,4 +48,14 @@ public class PhoneBookTest {
         Assertions.assertEquals(expectedNumber, phoneBook.findByName(name), "Должно вернуть правильный номер по имени");
     }
 
+    @ParameterizedTest
+    @CsvSource({
+            "Иван, 89033004567",
+            "Мария, 89033004568",
+            "Андрей, 89033004569"
+    })
+    public void printAllNamesTest(String name, String number) {
+        phoneBook.add(name, number);
+        Assertions.assertTrue(phoneBook.printAllNames().contains(name), "Список всех имен должен содержать добавленное имя");
+    }
 }
